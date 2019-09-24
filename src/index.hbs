@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="keywords" content="slider expiriens">
+  <meta charset="utf-8" name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="description" content='Slider'>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+  <meta property="og:url" content="http://crazysouslik.pro/"/>
+  <meta property="og:title" content="Slider">  
+  <meta property="og:image" content="../images/logo.png"/>  
+  <meta property="og:image:height" content="300"/>
+  <meta property="og:image:width" content="600"/> 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="styles/index.min.css">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <title>Slider</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap__radio">
+      <span class="radio__title">Select:</span>
+      <form>
+        <div id="radio">
+          <input type="radio" id="radio1" name="radio"><label for="radio1">color</label>
+          <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">backgroundColor</label>
+        </div>
+      </form>
+    </div>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+    <div id="swatch">
+      <p id="text">Какой-то текст для проведения тестовых испытаний</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="scripts/index.min.js"></script>
+</body>
+</html>
