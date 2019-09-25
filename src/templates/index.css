@@ -23,15 +23,7 @@
   float: left;
   clear: left;
   width: 300px;
-  margin: 15px;
-}
-
-#swatch {
-  width: 120px;
-  height: 100px;
-  margin-top: 18px;
-  margin-left: 350px;
-  background-image: none;
+  margin: 10px;
 }
 
 #red .ui-slider-range { background: #ef2929; }
@@ -40,3 +32,34 @@
 #green .ui-slider-handle { border-color: #8ae234; }
 #blue .ui-slider-range { background: #729fcf; }
 #blue .ui-slider-handle { border-color: #729fcf; }
+
+#swatch {
+  background-image: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 330px;
+  width: 300px;
+}
+
+#text {
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 660px) {
+  #red,
+  #green,
+  #blue {
+    float: none;
+    margin: 15px auto;
+    width: 90%;
+  }
+
+  #swatch {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
