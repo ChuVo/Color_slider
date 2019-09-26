@@ -1,4 +1,4 @@
-# color slider"
+# "Color slider"
 
 Slider made using the library [jquery](https://code.jquery.com/jquery-1.12.4.js) and [jquery-ui](https://code.jquery.com/ui/1.12.1/jquery-ui.js).
 
@@ -29,4 +29,5 @@ You must have installed: `node`, `npm`, `gulp`.
 
 1. `git clone https://github.com/ChuVo/Color_slider.git`
 2. `cd color_slider`
-3. `gulp dev`
+3. `npm install`
+4. `gulp dev`
