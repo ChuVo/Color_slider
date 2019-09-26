@@ -1,26 +1,24 @@
 const buttonBg = $('#radio2'),
       buttonColor = $('#radio1');
 
-let colors = $('#radio');
+addColorValue();
+result('127127127');
 
-colors.state = {
-  background: '353535',
-  color: '353535',
-  checked: 'buttonBg',
-  buttonColorIsClik: false
+buttonBg.state = {
+  color: '',
+  colorBg: '',
+  checked: "color"
 };
 
 buttonBg.click(() => {
-  colors.state.checked = 'buttonBg';
-  setColorValue(colors.state.background);
+  buttonBg.state.checked = 'background';
+  setColorValue(buttonBg.state.colorBg);
 });
 
 buttonColor.click(() => {
-    colors.state.checked = 'buttonColor';
-    setColorValue(colors.state.color);
+  buttonBg.state.checked = 'color';
+  setColorValue(buttonBg.state.color); 
 });
-
-addColorValue();
 
 function addColorValue() {
    $('#red, #green, #blue').slider({
@@ -42,12 +40,13 @@ function refreshSwatch() {
         blue = $('#blue').slider('value'),
         hex = rgb2hex(red, green, blue);
 
-  if(colors.state.checked === 'buttonBg') {
-    colors.state.background = hex;
+  if (buttonBg.state.checked === 'background') {
+    buttonBg.state.colorBg = hex;
     $('#swatch').css('background-color', '#' + hex);
   } else {
     $('#text').css('color', '#' + hex);
-    colors.state.color = hex;
+    $('#swatch').css('border', '2px solid #' + hex);
+    buttonBg.state.color = hex;
   }
 
   result(hex);
@@ -60,11 +59,7 @@ function setColorValue(hexValue) {
     $('#red').slider('value', value[0]);
     $('#green').slider('value', value[1]);
     $('#blue').slider('value', value[2]);
-  } else {
-    $('#red').slider('value', 127);
-    $('#green').slider('value', 127);
-    $('#blue').slider('value', 127);
-  }
+   }
 };
 
 $(() => $('#radio').buttonset());
@@ -96,9 +91,11 @@ function hex2rgb(c) {
 }
 
 function result(hex) {
-  $('#result-red').text($("#red").slider("value"));
   $('#result-green').text($("#green").slider("value"));
   $('#result-blue').text($("#blue").slider("value"));
-  $('#result-rgb').text(hex2rgb('#' + hex));
+  $('#result-red').text($("#red").slider("value"));  
+  $('#result-rgb').text(hex2rgb('#' + hex).slice(',').join(''));
   $('#result-hex').text('#' + hex);
+  $('#result-rgb').css('color', '#' + hex);
+  $('#result-hex').css('color', '#' + hex);
 };

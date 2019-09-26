@@ -5,12 +5,12 @@
   <meta charset="utf-8" name="viewport" content="initial-scale=1.0, width=device-width">
   <meta name="description" content='Slider'>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta property="og:url" content="http://crazysouslik.pro/"/>
-  <meta property="og:title" content="Slider">  
-  <meta property="og:image" content="../images/logo.png"/>  
+  <meta property="og:title" content="Slider">
+  <meta property="og:image" content="../images/logo.png"/>
   <meta property="og:image:height" content="300"/>
-  <meta property="og:image:width" content="600"/> 
+  <meta property="og:image:width" content="600"/>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="styles/index.min.css">
   <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
@@ -22,39 +22,28 @@
       <span class="radio__title">Select:</span>
       <form>
         <div id="radio">
-          <input type="radio" id="radio1" name="radio"><label for="radio1">color</label>
-          <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">backgroundColor</label>
+          <input class="radio" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1" class="radio">text color</label>
+          <input class="radio" type="radio" id="radio2" name="radio"><label for="radio2" class="radio">background color</label>
         </div>
       </form>
     </div>
-    
     <div class="wrap wrap-col">
       <div id="red"></div>
       <div id="green"></div>
       <div id="blue"></div>
     </div>
-   
     <div class="wrap wrap-justify">
       <div>
         <b class="result">Red: <span style="color:red" id="result-red"></span></b>
         <b class="result">Green: <span style="color:green" id="result-green"></span></b>
         <b class="result">Blue: <span style="color:blue" id="result-blue"></span></b>
-      </div>      
-      <div id="swatch">      
+      </div>
+      <div id="swatch">
         <p id="text">Какой-то текст для проведения тестовых испытаний</p>
       </div>
     </div>
-
-
-    
-    
-    
-    
-    
-    <b>Color in RGB: <span style="color:blue" id="result-rgb"></span></b>
-    <b>Color in HEX: <span style="color:blue" id="result-hex"></span></b>
-
-
+    <span class="mb-1">Color in RGB: <span style="font-weight: 700" id="result-rgb"></span></span><br>
+    <span>Color in HEX: <span id="result-hex" style="font-weight: 700"></span></span>
   </div>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
