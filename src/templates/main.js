@@ -1,30 +1,30 @@
-let hexColor = 'df7f33',
-    hexBgColor = '317fda',
-    mainHex = hexBgColor;
+const buttonBg = $('#radio2'),
+      buttonColor = $('#radio1');
 
-const buttonBg = $( '#radio2' ),
-      buttonColor = $( '#radio1' );
+let colors = $('#radio');
 
-buttonBg.click(() => { mainHex = hexBgColor; setColorValue() });
-buttonColor.click(() => { mainHex = hexColor; setColorValue() });
+colors.state = {
+  background: '353535',
+  color: '353535',
+  checked: 'buttonBg',
+  buttonColorIsClik: false
+};
 
-function refreshSwatch() {
-  const red = $( '#red' ).slider( 'value' ),
-        green = $( '#green' ).slider( 'value' ),
-        blue = $( '#blue' ).slider( 'value' ),
-        hex = rgb2hex( red, green, blue );
+buttonBg.click(() => {
+  colors.state.checked = 'buttonBg';
+  setColorValue(colors.state.background);
+});
 
-  if(buttonBg.prop( 'checked' )) {
-    $( '#swatch' ).css( 'background-color', '#' + hex );
-    hexBgColor = hex;
-  } else {
-    $( '#text' ).css( 'color', '#' + hex );
-    hexColor = hex;
-  }
-}
+buttonColor.click(() => {
+    colors.state.checked = 'buttonColor';
+    setColorValue(colors.state.color);
+});
 
-$( () => {
-  $( '#red, #green, #blue' ).slider({
+addColorValue();
+
+function addColorValue() {
+   $('#red, #green, #blue').slider({
+    animate: "fast",
     orientation: 'horizontal',
     range: 'min',
     max: 255,
@@ -34,17 +34,40 @@ $( () => {
   });
 
   setColorValue();
-});
+};
 
-function setColorValue() {
-  let value = hex2rgb('#' + mainHex);
+function refreshSwatch() {
+  const red = $('#red').slider('value'),
+        green = $('#green').slider('value'),
+        blue = $('#blue').slider('value'),
+        hex = rgb2hex(red, green, blue);
 
-  $( '#red' ).slider( 'value', value[0] );
-  $( '#green' ).slider( 'value', value[1] );
-  $( '#blue' ).slider( 'value', value[2] );
-}
+  if(colors.state.checked === 'buttonBg') {
+    colors.state.background = hex;
+    $('#swatch').css('background-color', '#' + hex);
+  } else {
+    $('#text').css('color', '#' + hex);
+    colors.state.color = hex;
+  }
 
-$( () => $( '#radio' ).buttonset() );
+  result(hex);
+};
+
+function setColorValue(hexValue) {
+  let value = hex2rgb('#' + hexValue);
+
+  if (hexValue) {
+    $('#red').slider('value', value[0]);
+    $('#green').slider('value', value[1]);
+    $('#blue').slider('value', value[2]);
+  } else {
+    $('#red').slider('value', 127);
+    $('#green').slider('value', 127);
+    $('#blue').slider('value', 127);
+  }
+};
+
+$(() => $('#radio').buttonset());
 
 function rgb2hex(r, g, b) {
   var hex = [
@@ -53,8 +76,8 @@ function rgb2hex(r, g, b) {
     b.toString(16)
   ];
 
-  $.each( hex, function( nr, val ) {
-    if ( val.length === 1 ) {
+  $.each(hex, function (nr, val) {
+    if (val.length === 1) {
       hex[ nr ] = '0' + val;
     }
   });
@@ -71,3 +94,11 @@ function hex2rgb(c) {
 
   return a;
 }
+
+function result(hex) {
+  $('#result-red').text($("#red").slider("value"));
+  $('#result-green').text($("#green").slider("value"));
+  $('#result-blue').text($("#blue").slider("value"));
+  $('#result-rgb').text(hex2rgb('#' + hex));
+  $('#result-hex').text('#' + hex);
+};

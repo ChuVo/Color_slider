@@ -27,12 +27,34 @@
         </div>
       </form>
     </div>
-    <div id="red"></div>
-    <div id="green"></div>
-    <div id="blue"></div>
-    <div id="swatch">
-      <p id="text">Какой-то текст для проведения тестовых испытаний</p>
+    
+    <div class="wrap wrap-col">
+      <div id="red"></div>
+      <div id="green"></div>
+      <div id="blue"></div>
     </div>
+   
+    <div class="wrap wrap-justify">
+      <div>
+        <b class="result">Red: <span style="color:red" id="result-red"></span></b>
+        <b class="result">Green: <span style="color:green" id="result-green"></span></b>
+        <b class="result">Blue: <span style="color:blue" id="result-blue"></span></b>
+      </div>      
+      <div id="swatch">      
+        <p id="text">Какой-то текст для проведения тестовых испытаний</p>
+      </div>
+    </div>
+
+
+    
+    
+    
+    
+    
+    <b>Color in RGB: <span style="color:blue" id="result-rgb"></span></b>
+    <b>Color in HEX: <span style="color:blue" id="result-hex"></span></b>
+
+
   </div>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
