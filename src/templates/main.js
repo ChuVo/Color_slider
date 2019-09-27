@@ -22,7 +22,7 @@ buttonColor.click(() => {
 
 function addColorValue() {
    $('#red, #green, #blue').slider({
-    animate: "fast",
+    animate: "slow",
     orientation: 'horizontal',
     range: 'min',
     max: 255,

@@ -18,21 +18,21 @@
 </head>
 <body>
   <div class="container">
-    <div class="wrap__radio">
-      <span class="radio__title">Select:</span>
+    <div class="switches">
+      <span class="switches__title">Select:</span>
       <form>
         <div id="radio">
-          <input class="radio" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1" class="radio">text color</label>
-          <input class="radio" type="radio" id="radio2" name="radio"><label for="radio2" class="radio">background color</label>
+          <input type="radio" id="radio1" name="radio" checked="checked"><label for="radio1" class="button">color</label>
+          <input type="radio" id="radio2" name="radio"><label for="radio2" class="button">background</label>
         </div>
       </form>
     </div>
-    <div class="wrap wrap-col">
+    <div class="wrap wrap_color-line">
       <div id="red"></div>
       <div id="green"></div>
       <div id="blue"></div>
     </div>
-    <div class="wrap wrap-justify">
+    <div class="wrap wrap_color-result">
       <div>
         <b class="result">Red: <span style="color:red" id="result-red"></span></b>
         <b class="result">Green: <span style="color:green" id="result-green"></span></b>
@@ -42,8 +42,8 @@
         <p id="text">Какой-то текст для проведения тестовых испытаний</p>
       </div>
     </div>
-    <span class="mb-1">Color in RGB: <span style="font-weight: 700" id="result-rgb"></span></span><br>
-    <span>Color in HEX: <span id="result-hex" style="font-weight: 700"></span></span>
+    <span class="result-color">Color in RGB: <span class="color-code" style="font-weight: 700" id="result-rgb"></span></span>
+    <span class="result-color">Color in HEX: <span class="color-code" id="result-hex" style="font-weight: 700"></span></span>
   </div>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

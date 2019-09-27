@@ -5,10 +5,17 @@
   max-width: 400px;
 }
 
-.wrap__radio {
+.switches {
   border: 1px solid #777;
   padding: .5rem;
   position: relative;
+}
+
+.switches__title {
+  background: #fff;
+  position: absolute;
+  top: -.7rem;
+  left: 1rem;
 }
 
 #radio {
@@ -17,15 +24,8 @@
   width: 100%;
 }
 
-.radio {
+.button {
   width: 50%;
-}
-
-.radio__title {
-  background: #fff;
-  position: absolute;
-  top: -.7rem;
-  left: 1rem;
 }
 
 .ui-controlgroup > .ui-controlgroup-item {
@@ -41,12 +41,9 @@
   margin: 1rem 0;
 }
 
-.wrap-col {
+.wrap_color-line {
   flex-direction: column;
-}
-
-.wrap-justify {
-  justify-content: space-between;
+  padding: 0 10px;
 }
 
 #red, #green, #blue,
@@ -60,6 +57,10 @@
 #green .ui-slider-handle { border-color: #8ae234; }
 #blue .ui-slider-range { background: #003eff; }
 #blue .ui-slider-handle { border-color: #003eff; }
+
+.wrap_color-result {
+  justify-content: space-between;
+}
 
 .result {
   display: block;
@@ -79,15 +80,16 @@
   position: relative;
 }
 
-.mb-1 {
+.result-color {
   display: block;
-  line-height: .5;
+  margin-bottom: 12px;
 }
 
-@media (max-width: 660px) {
-  #red,
-  #green,
-  #blue {
-    float: none;
-  }
+.color-code {
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 4px;
+  letter-spacing: 1.5px;
+  text-shadow: 0px 0px 1px #000; /* Параметры тени */
+  width: 120px;
 }
